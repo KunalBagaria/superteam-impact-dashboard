@@ -1,8 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+
+:root {
+  --main-background: hsl(0, 0%, 0%);
+  --bluish: hsl(203, 16%, 43%);
+  --light-green: hsl(152, 75%, 80%);
+  --box-color: hsl(240, 3%, 6%);
+  --text-color: hsl(0, 0%, 100%);
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: var(--main-background);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'DM Mono', monospace, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -13,4 +31,8 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+.main {
+  padding: 6rem;
 }
