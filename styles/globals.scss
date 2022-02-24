@@ -6,10 +6,14 @@
   --light-green: hsl(152, 75%, 80%);
   --box-color: hsl(240, 3%, 6%);
   --text-color: hsl(0, 0%, 100%);
+  --inverse-color: hsl(0, 0%, 0%);
 }
 
 html {
   font-size: 62.5%;
+  @media only screen and (max-width: 768px) {
+    font-size: 50%;
+  }
 }
 
 body {
@@ -38,4 +42,16 @@ a {
   @media only screen and (max-width: 768px) {
     padding: 3rem;
   }
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-width {
+  max-width: 1320px;
+  width: 100%;
 }
