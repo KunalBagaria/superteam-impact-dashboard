@@ -1,13 +1,14 @@
 import type { NextPage } from 'next'
 import { DefaultHead } from '@/layouts/DefaultHead'
 import { Navbar } from '@/layouts/Navbar'
-import styles from '../styles/Home.module.scss'
+import { MainHeading } from '@/layouts/Heading'
 
 const Home: NextPage = () => {
   return (
     <div className="main">
       <DefaultHead />
       <Navbar />
+      <MainHeading />
     </div>
   )
 }

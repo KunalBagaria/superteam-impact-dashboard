@@ -7,3 +7,29 @@
 .logo {
   width: 5rem;
 }
+
+.socials {
+  display: grid;
+  grid-template-columns: repeat(3, 5.4rem);
+  grid-gap: 1.6rem;
+}
+
+.social {
+  background: var(--text-color);
+  width: calc(4rem + 0.6vw);
+  height: calc(4rem + 0.6vw);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  &:hover {
+    transform: scale(0.95);
+  }
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  filter: drop-shadow(2px 2px 10px rgba(0, 0, 0, 0.7));
+}
