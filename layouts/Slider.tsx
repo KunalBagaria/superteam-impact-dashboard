@@ -9,9 +9,11 @@ const getCurrentPosition = (index: number) => {
 }
 
 export const Slider = ({
-  setParentSlide
+  setParentSlide,
+  setLoading
 }: {
-  setParentSlide: (index: number) => void
+  setParentSlide: (index: number) => void,
+  setLoading: (loading: boolean) => void
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
   const slides = ['Learn', 'Build', 'Invest', 'Earn'];
@@ -20,6 +22,7 @@ export const Slider = ({
       {slides.map((slide, index) => (
         <div
           onClick={() => {
+            setLoading(true);
             setActiveSlide(index)
             setParentSlide(index)
           }}
