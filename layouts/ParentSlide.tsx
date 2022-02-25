@@ -1,5 +1,5 @@
 import styles from '@/styles/Home.module.scss';
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Learn } from './Learn';
 import { Loading } from './Loading';
 
@@ -12,6 +12,11 @@ export const ParentSlide = ({
   loading: boolean,
   setLoading: (loading: boolean) => void
 }) => {
+
+  useEffect(() => {
+    setLoading(false);
+  }, [setLoading]);
+
   return (
     <div
       style={{ marginTop: '12rem' }}
@@ -25,7 +30,7 @@ export const ParentSlide = ({
       {!loading && (
         <>
           {activeSlide === 0 && (
-            <Learn />
+            <Learn setLoading={setLoading} />
           )}
         </>
       )}

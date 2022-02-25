@@ -8,6 +8,13 @@ const getCurrentPosition = (index: number) => {
   if (index === 3) return '73.5%';
 }
 
+export const handleLoading = (set: (loading: boolean) => void) => {
+  set(true);
+  setTimeout(() => {
+    set(false);
+  }, 3000);
+};
+
 export const Slider = ({
   setParentSlide,
   setLoading
@@ -16,13 +23,13 @@ export const Slider = ({
   setLoading: (loading: boolean) => void
 }) => {
   const [activeSlide, setActiveSlide] = useState(0);
-  const slides = ['Learn', 'Build', 'Invest', 'Earn'];
+  const slides = ['Learn', 'Earn', 'Build', 'Invest'];
   return (
     <div className={styles.container}>
       {slides.map((slide, index) => (
         <div
           onClick={() => {
-            setLoading(true);
+            handleLoading(setLoading);
             setActiveSlide(index)
             setParentSlide(index)
           }}
@@ -43,4 +50,4 @@ export const Slider = ({
       />
     </div>
   )
-}
+};
