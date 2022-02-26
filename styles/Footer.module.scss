@@ -1,0 +1,80 @@
+.container {
+  width: 100%;
+  min-height: 44rem;
+  background: var(--text-color);
+  padding: 8.4rem 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heading {
+  font-family: Syne;
+  font-weight: 400;
+  font-size: 4.8rem;
+  line-height: 5.8rem;
+  color: var(--inverse-color);
+  @media only screen and (max-width: 1000px) {
+    font-size: 3.6rem;
+  }
+}
+
+.btnFlex {
+  display: flex;
+  align-items: center;
+  margin-top: 3.6rem;
+  @media only screen and (max-width: 1000px) {
+    flex-direction: column;
+  }
+}
+
+.btn {
+  font-family: inherit;
+  width: 27.6rem;
+  height: 6.2rem;
+  border-radius: 28rem;
+  border: none;
+  cursor: pointer;
+  padding: 3.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 2.6rem;
+  transition: all 0.15s ease-in-out;
+  &:not(:first-child) {
+    @media only screen and (min-width: 1000px) {
+      margin-left: 2.9rem;
+    }
+    @media only screen and (max-width: 1000px) {
+      margin-top: 2.9rem;
+    }
+  }
+}
+
+.blackBtn {
+  background: var(--inverse-color);
+  color: var(--text-color);
+  &:hover {
+    & img {
+      filter: invert(100%);
+    }
+    background: none;
+    border: 0.1rem var(--inverse-color) solid;
+    color: var(--inverse-color);
+  }
+}
+
+.whiteBtn {
+  background: none;
+  color: var(--inverse-color);
+  border: 0.1rem var(--inverse-color) solid;
+  &:hover {
+    & img {
+      filter: invert(100%);
+    }
+    background: var(--inverse-color);
+    color: var(--text-color);
+  }
+}

@@ -1,6 +1,7 @@
 import styles from '@/styles/Home.module.scss';
 import carret from '@/images/icons/carret.svg'
 import { useState } from 'react';
+import { getPercent, numberFormatter } from '@/components/numbers';
 
 export const Category = (props: any) => {
   const [expanded, setExpanded] = useState(true);
@@ -29,10 +30,15 @@ export const Category = (props: any) => {
 interface Props {
   title: string,
   description: string,
-  fields: any[]
+  fields: any,
 }
 
 export const Metric = (metrics: Props) => {
+  const lastMonthMetric = metrics.fields['Last Month'];
+  const thisMonthMetric = metrics.fields['This Month'];
+  const totalMetrics = metrics.fields['Total'];
+  const percent = Math.ceil(getPercent(thisMonthMetric, lastMonthMetric));
+
   return (
     <div className={styles.metric}>
 
@@ -52,42 +58,49 @@ export const Metric = (metrics: Props) => {
 
         <div className={styles.metricNumberFlex}>
 
-          <div className={styles.metricNumbers}>
-            <div className={styles.verticalSpaceBetween}>
-              <p
-                style={{ fontSize: '2rem' }}
-                className={styles.blueText}>
-                  Last Month
-              </p>
-              <p
-                style={{ marginTop: '1.6rem' }}
-                className={styles.mainText}>
-                150k
-                <span
-                  style={{ marginLeft: '1rem' }}
-                  className={styles.greenText}>
-                  ---
-                </span>
-              </p>
+          {!totalMetrics && (
+            <div className={styles.metricNumbers}>
+              <div className={styles.verticalSpaceBetween}>
+                <p
+                  style={{ fontSize: '2rem' }}
+                  className={styles.blueText}>
+                    Last Month
+                </p>
+                <p
+                  style={{ marginTop: '1.6rem' }}
+                  className={styles.mainText}>
+                  {numberFormatter(lastMonthMetric)}
+                  <span
+                    style={{ marginLeft: '1rem' }}
+                    className={styles.greenText}>
+                    ---
+                  </span>
+                </p>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className={styles.metricNumbers}>
             <div className={styles.verticalSpaceBetween}>
               <p
                 style={{ fontSize: '2rem' }}
                 className={styles.blueText}>
-                  Last Month
+                  {totalMetrics ? 'Total' : 'This Month'}
               </p>
               <p
                 style={{ marginTop: '1.6rem' }}
                 className={styles.mainText}>
-                150k
-                <span
-                  style={{ marginLeft: '1rem' }}
-                  className={styles.greenText}>
-                  ---
-                </span>
+                {totalMetrics ? numberFormatter(totalMetrics) : numberFormatter(thisMonthMetric)}
+                {!totalMetrics && (
+                  <span
+                    style={{
+                      marginLeft: '1rem',
+                      color: percent > 0 ? 'var(--light-green)' : 'var(--red)',
+                    }}
+                    className={styles.greenText}>
+                    {percent > 0 ? `+${percent}%` : `${percent}%`}
+                  </span>
+                )}
               </p>
             </div>
           </div>

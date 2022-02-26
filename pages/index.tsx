@@ -5,6 +5,7 @@ import { Slider } from '@/layouts/Slider'
 import { useState } from 'react'
 import { ParentSlide } from '@/layouts/ParentSlide'
 import Airtable from 'airtable'
+import { Footer } from '@/layouts/Footer'
 
 interface Props {
   records: any[]
@@ -14,23 +15,26 @@ const Home = (props: Props) => {
   const [currentPage, setCurrentPage] = useState(0);
   const [loading, setLoading] = useState(false);
   return (
-    <div className="main">
-      <DefaultHead />
-      <Navbar />
-      <MainHeading />
-      <div className="main-container">
-        <Slider
-          setLoading={setLoading}
-          setParentSlide={setCurrentPage}
-        />
-        <ParentSlide
-          data={props.records}
-          loading={loading}
-          setLoading={setLoading}
-          activeSlide={currentPage}
-        />
+    <>
+      <div className="main">
+        <DefaultHead />
+        <Navbar />
+        <MainHeading />
+        <div className="main-container">
+          <Slider
+            setLoading={setLoading}
+            setParentSlide={setCurrentPage}
+          />
+          <ParentSlide
+            data={props.records}
+            loading={loading}
+            setLoading={setLoading}
+            activeSlide={currentPage}
+          />
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   )
 }
 

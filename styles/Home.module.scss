@@ -6,6 +6,9 @@
   color: var(--text-color);
   margin-top: 8rem;
   text-align: center;
+  @media only screen and (max-width: 1000px) {
+    font-size: 3.6rem;
+  }
 }
 
 .loading {
@@ -58,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  @media only screen and  (max-width: 768px) {
+  @media only screen and  (max-width: 1000px) {
     flex-direction: column;
   }
 }
@@ -97,7 +100,7 @@
   &:not(:last-child) {
     margin-right: 10rem;
   }
-  @media only screen and (max-width: 768px) {
+  @media only screen and (max-width: 1000px) {
     margin: 3rem 0rem;
   }
 }

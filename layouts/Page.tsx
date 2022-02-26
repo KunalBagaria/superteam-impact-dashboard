@@ -19,6 +19,7 @@ export const Page = ({
     const uniqueCategories = [...new Set(dupCategories)];
     setParentData(filteredData);
     setCategories(uniqueCategories);
+    console.log(data);
   }, [data, name]);
 
   return (
