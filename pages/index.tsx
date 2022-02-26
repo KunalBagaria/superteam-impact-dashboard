@@ -24,6 +24,7 @@ const Home = (props: Props) => {
           setParentSlide={setCurrentPage}
         />
         <ParentSlide
+          data={props.records}
           loading={loading}
           setLoading={setLoading}
           activeSlide={currentPage}

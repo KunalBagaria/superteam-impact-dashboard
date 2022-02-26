@@ -47,10 +47,20 @@
 .metric {
   width: 100%;
   margin-top: 5.6rem;
-  height: 14.2rem;
+  min-height: 14.2rem;
   background: var(--box-color);
   border-radius: 2rem;
   padding: 3.6rem;
+}
+
+.metricContent {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @media only screen and  (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .verticalSpaceBetween {
@@ -81,4 +91,18 @@
   font-size: 2rem;
   line-height: 2.6rem;
   color: var(--light-green);
+}
+
+.metricNumbers {
+  &:not(:last-child) {
+    margin-right: 10rem;
+  }
+  @media only screen and (max-width: 768px) {
+    margin: 3rem 0rem;
+  }
+}
+
+.metricNumberFlex {
+  display: flex;
+  align-items: center;
 }

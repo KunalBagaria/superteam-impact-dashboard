@@ -26,28 +26,75 @@ export const Category = (props: any) => {
   );
 };
 
-interface Metric {
-  title: string,
-  value: string
-}
-
 interface Props {
   title: string,
   description: string,
-  // metrics: Metric[]
+  fields: any[]
 }
 
 export const Metric = (metrics: Props) => {
   return (
     <div className={styles.metric}>
-      <div className={styles.verticalSpaceBetween}>
-        <p className={styles.mainText}>{metrics.title}</p>
-        <p
-          className={styles.blueText}
-          style={{ marginTop: '1.6rem', fontSize: '1.8rem' }}
-        >
-          {metrics.description}
-        </p>
+
+      <div
+      style={{ alignItems: 'flex-start' }}
+        className={styles.metricContent}
+      >
+        <div className={styles.verticalSpaceBetween}>
+          <p className={styles.mainText}>{metrics.title}</p>
+          <p
+            className={styles.blueText}
+            style={{ marginTop: '1.6rem', fontSize: '1.8rem' }}
+          >
+            {metrics.description}
+          </p>
+        </div>
+
+        <div className={styles.metricNumberFlex}>
+
+          <div className={styles.metricNumbers}>
+            <div className={styles.verticalSpaceBetween}>
+              <p
+                style={{ fontSize: '2rem' }}
+                className={styles.blueText}>
+                  Last Month
+              </p>
+              <p
+                style={{ marginTop: '1.6rem' }}
+                className={styles.mainText}>
+                150k
+                <span
+                  style={{ marginLeft: '1rem' }}
+                  className={styles.greenText}>
+                  ---
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div className={styles.metricNumbers}>
+            <div className={styles.verticalSpaceBetween}>
+              <p
+                style={{ fontSize: '2rem' }}
+                className={styles.blueText}>
+                  Last Month
+              </p>
+              <p
+                style={{ marginTop: '1.6rem' }}
+                className={styles.mainText}>
+                150k
+                <span
+                  style={{ marginLeft: '1rem' }}
+                  className={styles.greenText}>
+                  ---
+                </span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+
       </div>
     </div>
   )

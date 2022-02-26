@@ -1,18 +1,20 @@
 import styles from '@/styles/Home.module.scss';
-import { useState, useEffect } from "react"
-import { Learn } from './Learn';
+import { useEffect } from "react"
+import { Page } from './Page';
 import { Loading } from './Loading';
 
 export const ParentSlide = ({
   activeSlide,
   loading,
-  setLoading
+  setLoading,
+  data
 }: {
   activeSlide: number,
   loading: boolean,
-  setLoading: (loading: boolean) => void
+  setLoading: (loading: boolean) => void,
+  data: any[]
 }) => {
-
+  const pages = ['Learn', 'Earn', 'Build', 'Invest']
   useEffect(() => {
     setLoading(false);
   }, [setLoading]);
@@ -28,11 +30,11 @@ export const ParentSlide = ({
         </div>
       )}
       {!loading && (
-        <>
-          {activeSlide === 0 && (
-            <Learn setLoading={setLoading} />
-          )}
-        </>
+        <Page
+          name={pages[activeSlide]}
+          data={data}
+          setLoading={setLoading}
+        />
       )}
     </div>
   )
