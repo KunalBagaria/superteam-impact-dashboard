@@ -30,7 +30,7 @@
 
 .btn {
   font-family: inherit;
-  width: 27.6rem;
+  min-width: 38rem;
   height: 6.2rem;
   border-radius: 28rem;
   border: none;
@@ -61,7 +61,7 @@
       filter: invert(100%);
     }
     background: none;
-    border: 0.1rem var(--inverse-color) solid;
+    outline: 0.1rem var(--inverse-color) solid;
     color: var(--inverse-color);
   }
 }
@@ -69,7 +69,7 @@
 .whiteBtn {
   background: none;
   color: var(--inverse-color);
-  border: 0.1rem var(--inverse-color) solid;
+  outline: 0.1rem var(--inverse-color) solid;
   &:hover {
     & img {
       filter: invert(100%);
