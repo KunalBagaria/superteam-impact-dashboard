@@ -6,6 +6,9 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  @media only screen and (max-width: 768px) {
+    padding: 4.2rem 3rem;
+  }
 }
 
 .heading {
@@ -21,7 +24,7 @@
 
 .btnFlex {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 3.6rem;
   @media only screen and (max-width: 1000px) {
     flex-direction: column;
@@ -30,7 +33,6 @@
 
 .btn {
   font-family: inherit;
-  min-width: 38rem;
   height: 6.2rem;
   border-radius: 28rem;
   border: none;
@@ -38,11 +40,16 @@
   padding: 3.6rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   font-weight: 400;
   font-size: 2rem;
   line-height: 2.6rem;
   transition: all 0.15s ease-in-out;
+  @media only screen and (max-width: 768px) {
+    padding: 2.8rem;
+  }
+  & img {
+    margin-left: 3.5rem;
+  }
   &:not(:first-child) {
     @media only screen and (min-width: 1000px) {
       margin-left: 2.9rem;

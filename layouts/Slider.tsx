@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from '@/styles/Slider.module.scss';
 
 const getCurrentPosition = (index: number) => {
-  if (index === 0) return '3.25%';
+  if (index === 0) return '3.15%';
   if (index === 1) return '26.65%';
   if (index === 2) return '50%';
   if (index === 3) return '73.5%';

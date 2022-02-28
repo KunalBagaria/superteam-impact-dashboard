@@ -107,5 +107,7 @@
 
 .metricNumberFlex {
   display: flex;
-  align-items: center;
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 }
