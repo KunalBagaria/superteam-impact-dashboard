@@ -37,6 +37,7 @@ export const Metric = (metrics: Props) => {
   const lastMonthMetric = metrics.fields['Last Month'];
   const thisMonthMetric = metrics.fields['This Month'];
   const totalMetrics = metrics.fields['Total'];
+  const monetary = metrics.fields['Monetary Metric'];
   const percent = Math.ceil(getPercent(thisMonthMetric, lastMonthMetric));
 
   return (
@@ -69,6 +70,7 @@ export const Metric = (metrics: Props) => {
                 <p
                   style={{ marginTop: '1.6rem' }}
                   className={styles.mainText}>
+                  {monetary ? '$' : ''}
                   {numberFormatter(lastMonthMetric)}
                   <span
                     style={{ marginLeft: '1rem' }}
@@ -90,6 +92,7 @@ export const Metric = (metrics: Props) => {
               <p
                 style={{ marginTop: '1.6rem' }}
                 className={styles.mainText}>
+                {monetary ? '$' : ''}
                 {totalMetrics ? numberFormatter(totalMetrics) : numberFormatter(thisMonthMetric)}
                 {!totalMetrics && (
                   <span
