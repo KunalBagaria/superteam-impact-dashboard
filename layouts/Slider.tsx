@@ -12,7 +12,7 @@ export const handleLoading = (set: (loading: boolean) => void) => {
   set(true);
   setTimeout(() => {
     set(false);
-  }, 3000);
+  }, 1800);
 };
 
 export const Slider = ({

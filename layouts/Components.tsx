@@ -73,7 +73,7 @@ export const Metric = (metrics: Props) => {
                   {monetary ? '$' : ''}
                   {numberFormatter(lastMonthMetric)}
                   <span
-                    style={{ marginLeft: '1rem' }}
+                    style={{ marginLeft: (monetary || !totalMetrics) ? '1rem' : '0rem' }}
                     className={styles.greenText}>
                     ---
                   </span>
@@ -97,7 +97,7 @@ export const Metric = (metrics: Props) => {
                 {!totalMetrics && (
                   <span
                     style={{
-                      marginLeft: '1rem',
+                      marginLeft: (monetary || !totalMetrics) ? '1rem' : '0rem',
                       color: percent > 0 ? 'var(--light-green)' : 'var(--red)',
                     }}
                     className={styles.greenText}>

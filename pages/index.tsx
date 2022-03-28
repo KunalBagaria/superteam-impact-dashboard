@@ -43,7 +43,7 @@ export default Home
 export const getServerSideProps = async () => {
   const base = new Airtable({
     apiKey: process.env.AIRTABLE_KEY
-  }).base('appVyljHhPqXgrw7U');
+  }).base('appvIm2lBJyGoda6v');
   const records = await base('Metrics').select({ view: 'Grid view' }).firstPage();
   const recordsJSON = records.map((record) => record._rawJson);
   return {
