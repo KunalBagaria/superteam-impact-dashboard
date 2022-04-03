@@ -5,7 +5,7 @@ import { Slider } from "@/layouts/Slider";
 import { useState } from "react";
 import { ParentSlide } from "@/layouts/ParentSlide";
 import { Footer } from "@/layouts/Footer";
-import { useMetricsData } from "@/utils/useSQL";
+import { getMetricsData } from "@/utils/useSQL";
 import { MetricRow } from "types";
 
 interface Props {
@@ -39,7 +39,7 @@ const Home = ({ metrics }: Props) => {
 export default Home;
 
 export const getServerSideProps = async () => {
-  const metrics = await useMetricsData();
+  const metrics = await getMetricsData();
   return {
     props: { metrics },
   };

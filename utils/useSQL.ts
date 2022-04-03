@@ -14,7 +14,7 @@ export const useSQL = async (query: string) => {
   return resp;
 };
 
-export const useMetricsData = () => {
+export const getMetricsData = () => {
   const fields = [
     "id",
     "child_category",
