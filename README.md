@@ -6,6 +6,7 @@ First, create an .env.local file with the following params:
 
 ```
 AIRTABLE_KEY=
+DB_STRING=
 ```
 
 Then, run the development server:
