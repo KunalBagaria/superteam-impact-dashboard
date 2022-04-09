@@ -24,26 +24,35 @@ export const Page = ({
     setCategories(uniqueCategories);
   }, [data, name]);
 
-  console.log(categories);
-
   return (
     <div>
       {categories &&
         categories.map((category: string) => (
           <Category key={category} title={category} setLoading={setLoading}>
-            {parentData &&
-              parentData.map((metric) => (
-                <>
-                  {metric.child_category === category && (
-                    <Metric
-                      key={metric.id}
-                      title={metric.name}
-                      description={metric.description}
-                      metricData={metric}
-                    />
-                  )}
-                </>
-              ))}
+            {category === 'Community GDP' && parentData.map((metric) => (
+              <>
+                {metric.name === 'Community GDP' && (
+                  <Metric
+                    key={metric.id}
+                    title={metric.name}
+                    description={metric.description}
+                    metricData={metric}
+                  />
+                )}
+              </>
+            ))}
+            {parentData && parentData.map((metric) => (
+              <>
+                {metric.child_category === category && metric.name !== 'Community GDP' && (
+                  <Metric
+                    key={metric.id}
+                    title={metric.name}
+                    description={metric.description}
+                    metricData={metric}
+                  />
+                )}
+              </>
+            ))}
           </Category>
         ))}
     </div>

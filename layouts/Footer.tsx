@@ -11,7 +11,7 @@ export const Footer = () => (
     <div className={styles.btnFlex}>
       <button
         onClick={() => {
-          window.open("https://lu.ma/superteamDAO", "_blank");
+          window.open("https://superteam.fun/find-work-in-web3", "_blank");
         }}
         className={`${styles.btn} ${styles.blackBtn}`}
       >
