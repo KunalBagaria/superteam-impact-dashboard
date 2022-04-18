@@ -5,8 +5,8 @@ import nebIcon from "@/images/icons/neb.svg";
 export const Footer = () => (
   <div className={styles.container}>
     <h1 className={styles.heading}>
-      We are a digital co-op of operators, devs & angels working on promising
-      solana projects{" "}
+      We are a digital co-op of devs, creatives & operators helping Solana projects
+      launch and grow
     </h1>
     <div className={styles.btnFlex}>
       <button
@@ -15,7 +15,7 @@ export const Footer = () => (
         }}
         className={`${styles.btn} ${styles.blackBtn}`}
       >
-        Come Join us
+        Start earning in Web3
         <img src={newIcon.src} alt="" />
       </button>
       <button

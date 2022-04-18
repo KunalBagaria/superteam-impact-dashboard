@@ -15,7 +15,12 @@ export const ParentSlide = ({
   setLoading: (loading: boolean) => void;
   data: MetricRow[];
 }) => {
-  const pages = ["Learn", "Earn", "Build", "Invest"];
+  const pages = [
+    "Learn",
+    "Earn",
+    // "Build",
+    "Invest"
+  ];
   useEffect(() => {
     setLoading(false);
   }, [setLoading]);
