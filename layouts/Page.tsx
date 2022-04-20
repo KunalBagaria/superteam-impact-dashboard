@@ -26,24 +26,44 @@ export const Page = ({
 
   return (
     <div>
+      {name === 'Earn' && (
+        <Category title={'Community GDP'} setLoading={setLoading}>
+          {parentData && parentData.map((metric) => (
+            <>
+              {
+              metric.child_category === 'Community GDP' &&
+              metric.name === 'Community GDP' && (
+                <Metric
+                  key={metric.id}
+                  title={metric.name}
+                  description={metric.description}
+                  metricData={metric}
+                />
+              )}
+            </>
+          ))}
+          {parentData && parentData.map((metric) => (
+            <>
+              {
+                metric.child_category === 'Community GDP' &&
+                metric.name !== 'Community GDP' && (
+                <Metric
+                  key={metric.id}
+                  title={metric.name}
+                  description={metric.description}
+                  metricData={metric}
+                />
+              )}
+            </>
+          ))}
+        </Category>
+      )}
       {categories &&
-        categories.map((category: string) => (
+        categories.map((category: string) => category !== 'Community GDP' && (
           <Category key={category} title={category} setLoading={setLoading}>
-            {category === 'Community GDP' && parentData.map((metric) => (
-              <>
-                {metric.name === 'Community GDP' && (
-                  <Metric
-                    key={metric.id}
-                    title={metric.name}
-                    description={metric.description}
-                    metricData={metric}
-                  />
-                )}
-              </>
-            ))}
             {parentData && parentData.map((metric) => (
               <>
-                {metric.child_category === category && metric.name !== 'Community GDP' && (
+                {metric.child_category === category && (
                   <Metric
                     key={metric.id}
                     title={metric.name}
@@ -54,7 +74,8 @@ export const Page = ({
               </>
             ))}
           </Category>
-        ))}
+        ))
+      }
     </div>
   );
 };
