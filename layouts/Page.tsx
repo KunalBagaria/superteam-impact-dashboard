@@ -16,9 +16,9 @@ export const Page = ({
 
   useEffect(() => {
     const filteredData = data.filter((item) =>
-      item.parent_category.includes(name)
+      item.parent_category?.includes(name)
     );
-    const dupCategories = filteredData.map((item) => item.child_category);
+    const dupCategories = filteredData.map((item) => item?.child_category);
     const uniqueCategories = [...new Set(dupCategories)];
     setParentData(filteredData);
     setCategories(uniqueCategories);
